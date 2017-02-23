@@ -45,3 +45,7 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+app/platforms/*
+app/platforms/**/*
+release/**/*
+node_modules/**/*

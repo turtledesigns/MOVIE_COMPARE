@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/*
+* Gumby Framework Version 2.0
+* ---------------------------
+* Follow @gumbycss on twitter and spread the love.
+* We worked super hard on making this awesome and released it to the web.
+* All we ask is you leave this intact. #gumbyisawesome
+*
+* http://www.gumbyframework.com/
+*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font: inherit; font-size: 100%; vertical-align: middle; }
+
+html { line-height: 1; }
+
+ol, ul { list-style: none; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+caption, th, td { text-align: left; font-weight: normal; vertical-align: middle; }
+
+q, blockquote { quotes: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; content: none; }
+
+a img { border: none; }
+
+a, a:hover {text-decoration: none; color:#a1a1a1;}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary { display: block; }
+
+* html { font-size: 100%; }
+
+html { font-size: 14px; line-height: 1.625em; }
+
+html * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+body { background: white; font-family: 'Open Sans', sans-serif; font-weight: 400; color: #555555; position: relative; -webkit-font-smoothing: antialiased; }
+@media only screen and (max-width: 767px) { body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; width: 100%; min-width: 0; } }
+
+.row { width: 100%; max-width: 940px; min-width: 320px; margin: 0 auto; }
+@media only screen and (max-width: 960px) { .row { padding: 0 20px; } }
+.row .row { min-width: 0px; }
+@media only screen and (max-width: 960px) { .row .row { padding: 0; } }
+
+/* To fix the grid into a different size, set max-width to your desired width */
+.column, .columns { float: left; min-height: 1px; position: relative; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+.column:first-child, .columns:first-child, .alpha { margin-left: 0px; }
+
+/* Column Classes */
+.row .twelve.columns { width: 100%; }
+
+img { max-width: 100%; height: auto; }
+object, embed { max-width: 600px; height: 450px; }
+
+img { -ms-interpolation-mode: bicubic; }
+
+.row { *zoom: 1; }
+.row:before, .row:after { content: ""; display: table; }
+.row:after { clear: both; }
+
+/* Mobile */
+@media only screen and (max-width: 767px) { body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; width: 100%; min-width: 0; }
+  .container { min-width: 0; margin-left: 0; margin-right: 0; }
+  .row { width: 100%; min-width: 0; margin-left: 0; margin-right: 0; }
+  .row .row .column, .row .row .columns { padding: 0; }
+  .column, .columns { width: auto !important; float: none; margin-left: 0; margin-right: 0; }
+  .column:last-child, .columns:last-child { margin-right: 0; float: none; }

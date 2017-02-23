@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <script type="text/javascript" src="cordova.js"></script>
+    <!---->
+    <title>Movie Compare</title>
+
+    <script src="js/vendor/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="js/vendor/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/vendor/angular.js"></script>
+    <script type="text/javascript" src="js/vendor/angular-sanitize.js"></script>
+
+    <link rel="stylesheet" href="css/external/gumby.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="app" ng-app="MCApp">
+        <div id="deviceready">
+            <p class="event listening"></p>
+            <div class="event received" id="main-app" ng-controller="MCController">
+                <div id="mainWrapper">
+                    <div id="header" class="row">
+                        <div class="twelve columns centered">
+                            <h2>{{heading}}<i class="title_line"></i></h2>
+                        </div>
+                    </div>
+
+                    <div id="movie_results" class="default-hide">
+                        <ul id="accordian">
+                            <li class="movieRated_{{$index+1}}" ng-repeat="i in getNumber(number) track by $index">
+                                <h3 id="h3Title{{$index+1}}"></h3>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="movie_fields">
+                        <div class="control-group" id="content">
+                            <div class="controls" id="movie_fileds">
+
+                                <div class="movie-input-field" id="break{{$index+1}}" ng-repeat="i in getNumber(number) track by $index" on-finish-render="ngRepeatFinished">
+                                    <input type="text" name="first_name" id="tags{{$index+1}}" placeholder="Enter Movie or TV Show name" required>
+                                    <img src="img/invalid.png" class="tagStatus" id="tags{{$index+1}}_status">
+                                </div>
+
+                                <div class="footer-buttons">
+                                    <button name="send" type="button" onclick="window.location.reload()" class="submit reset-btn">&nbsp;</button>
+                                    <button name="send" type="button" id="add" ng-click="add_fields();" class="submit">ADD</button>
+                                    <button name="send" type="button" ng-click="getRatings();" class="submit" value="compare">COMPARE</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="resetAll">
+                        <button name="send" type="button" onclick="window.location.reload()" class="submit reset-btn">&nbsp;</button>
+                    </div>
+                </div>
+                <div id="loading-screen">
+                    <div class="loading-animation"></div>
+                </div>
+                <div id="logo-screen">
+                    <img src="img/logo.png" class="logo-animation" />
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- START JAVASCRIPTS ############################################### -->
+    <script type="text/javascript" src="js/main.js"></script>
+    <!-- END JAVASCRIPTS ############################################### -->
+</body>
+
+</html>
