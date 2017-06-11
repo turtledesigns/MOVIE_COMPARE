@@ -34,6 +34,10 @@ function onDeviceReady() {
     } else if (debugMode) {
         getDeviceIDSuccess('DEBUG-MODE');
     }
+	
+	if (cordova.platformId == 'android') {
+		StatusBar.backgroundColorByHexString("#333");
+	}
 
     function getDeviceIDSuccess(uuid) {
         deviceID = uuid;
@@ -272,7 +276,6 @@ function main($scope, $http) {
                 select: function (event, ui) {
                     if (ui && ui.item && ui.item.movieID) {
                         var dataInt = $(this).attr("data-int");
-                        console.log(dataInt);
                         $("#tags" + dataInt).attr('movie-id', ui.item.movieID);
                         $("#ui-id-" + dataInt).attr('value', '');
                         $("#tags" + dataInt + "_status").attr('src', 'img/valid.png');
@@ -280,7 +283,6 @@ function main($scope, $http) {
                 },
                 search: function (event, ui) {
                     var dataInt = $(this).attr("data-int");
-                    console.log(dataInt);
                     $("#tags" + dataInt).attr('movie-id', '');
                     $("#ui-id-" + dataInt).attr('value', 'showing');
                     $("#tags" + dataInt + "_status").attr('src', 'img/loading.gif');

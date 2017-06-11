@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.turtledesigns.moviecompare"
+        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.turtledesigns.moviecompare"
         }
