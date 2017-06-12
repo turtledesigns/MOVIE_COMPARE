@@ -46,7 +46,7 @@ gulp.task('ftp', function () {
 
 // copy assets
 gulp.task('moveBuildToCorrectFolder', function (){
-	return gulp.src('app/platforms/android/build/outputs/apk/android-debug.apk')
+	return gulp.src('app/platforms/android/build/outputs/apk/android-release.apk')
 		.pipe(rename('MOVIE_COMPARE_v' + pkg.version + '.apk'))
 		.pipe(gulp.dest('release/BUILD_' + pkg.version))
 });
