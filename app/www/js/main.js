@@ -160,11 +160,11 @@ function main($scope, $http) {
             var searchUrl;
 
             if (movieID !== "") {
-                searchUrl = "http://www.omdbapi.com/?plot=full&i=" + movieID;
+                searchUrl = "http://www.omdbapi.com/?apikey=[yourkey]&plot=full&i=" + movieID;
             } else if (title !== "" && year !== "") {
-                searchUrl = "http://www.omdbapi.com/?plot=full&y=" + year + "&t=" + title;
+                searchUrl = "http://www.omdbapi.com/?apikey=[yourkey]&plot=full&y=" + year + "&t=" + title;
             } else {
-                searchUrl = "http://www.omdbapi.com/?plot=full&t=" + title;
+                searchUrl = "http://www.omdbapi.com/?apikey=[yourkey]&plot=full&t=" + title;
             }
 
             $http.get(searchUrl, {
